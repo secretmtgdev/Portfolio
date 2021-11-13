@@ -1,5 +1,8 @@
 const Mathematics = () => {
-    return (<></>);
+    return (
+        <div>
+        </div>
+    );
 }
 
 export default Mathematics;

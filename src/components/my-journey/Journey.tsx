@@ -13,7 +13,10 @@ const Journey = () => {
         getExperienceIcons();
     })
     const mapping: any[] = mapToIconComponents(experienceIcons);
-    return (<>{mapping}</>);
+    return (
+        <div>
+            {mapping}
+        </div>);
 }
 
 export default Journey;
