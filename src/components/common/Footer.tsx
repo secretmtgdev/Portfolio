@@ -4,7 +4,7 @@ import { mapToIconComponents } from '../../Utils';
 const Footer = (props: FooterProps) => {
     const mapping: any[] = mapToIconComponents(props.socialMedia);
     return (
-        <footer data-id='footer-component'>
+        <footer>
             {mapping}
             <figure>
                 <figcaption><cite>Albert Einstein:</cite></figcaption>
