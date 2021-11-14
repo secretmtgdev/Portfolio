@@ -1,4 +1,15 @@
 import { IconProps, PageType } from './Types';
+import { If, Then } from 'react-if';
+
+/*******************
+ ** App Constants **
+ *******************/
+const AppConstants = {
+    StringConstants: {
+        DataNotFound: 'The data could not be found.',
+        DataUnavailable: 'The data is currently unavailable.'
+    }
+}
 
 /*******************************
  ** Internal helper functions **
@@ -59,10 +70,42 @@ const isNullOrUndefined = (entity: any) => {
     return entity === null || entity === undefined;
 }
 
+/********************
+ ** DEBUGGER LOGIC **
+ ********************/
+const renderDocumentDetails = () => {
+    const doctypeObj: DocumentType | null = document.doctype;
+    return (
+        <>
+            <If condition={!isNullOrUndefined(doctypeObj)}>
+                <Then>
+                    <div>
+                        <h3>Document type details</h3>
+                        <ul>
+                            <li>Name: {doctypeObj!.name}</li>
+                            <li>
+                                Public Id: {doctypeObj!.publicId ? 
+                                doctypeObj!.publicId :
+                                AppConstants.StringConstants.DataNotFound}
+                            </li>
+                            <li>
+                                System Id: {doctypeObj!.systemId ?
+                                doctypeObj!.systemId :
+                                AppConstants.StringConstants.DataNotFound}
+                            </li>
+                        </ul>
+                    </div>   
+                </Then>
+            </If>        
+        </>
+    )
+}
+
 export {
     getPageDetails,
     getProfessionalExperienceIcons,
     getSocialMediaIcons,
     isNullOrUndefined,
-    mapToIconComponents
+    mapToIconComponents,
+    renderDocumentDetails
 }
