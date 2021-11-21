@@ -25,9 +25,9 @@ const Page = (props: PageProps) => {
     
     return (
         <div dir='ltr'>
-            <Navigation></Navigation>
+            <Navigation />
             <Header title={props.title as string} />
-            <Main></Main>
+            <Main />
             <If condition={!isNullOrUndefined(props.stats)}>
                 <Then>
                     <Stats stats={props.stats!} />
