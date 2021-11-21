@@ -1,4 +1,4 @@
-import { PageType } from '../../Types';
+import { PageEnum } from '../../Types';
 import Page from '../common/Page';
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     skills.set('JavaScript', 70);
     skills.set('C#', 55);
     skills.set('Java', 55);
-    return <Page title={'Home'} type={PageType.HOME} stats={skills}></Page>;
+    return <Page title={'Home'} type={PageEnum.HOME} stats={skills}></Page>;
 }
 
 export default Home;

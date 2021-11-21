@@ -14,7 +14,7 @@ type IconProps = {
 
 type PageProps = {
     title: string,
-    type: PageType
+    type: PageEnum
     stats?: Map<string, number>
 }
 
@@ -34,13 +34,32 @@ type StatProps = {
     stats: Map<string, number>
 }
 
+type DebuggerProps = {
+    state?: StateType
+}
+
+interface StateType {
+    [key: string]: any
+}
+
+interface LinearAlgebraState {
+    playing: boolean,
+    paused: boolean,
+    rows: number,
+    columns: number,
+    currentState: number,
+    currentMatrix: number[][],
+    currentJsxMatrix: JSX.Element,
+    jsxMatrixStates: JSX.Element[]
+}
+
 // Enums only support numeric and string based literals
-class PageType {
-    static readonly HOME = new PageType(home);
-    static readonly FEE = new PageType(fee);
-    static readonly CS = new PageType(cs);
-    static readonly JOURNEY = new PageType(journey);
-    static readonly MATH = new PageType(math);
+class PageEnum {
+    static readonly HOME = new PageEnum(home);
+    static readonly FEE = new PageEnum(fee);
+    static readonly CS = new PageEnum(cs);
+    static readonly JOURNEY = new PageEnum(journey);
+    static readonly MATH = new PageEnum(math);
 
     private constructor(private readonly value: string){}
 
@@ -50,14 +69,17 @@ class PageType {
 }
 
 export type {
+    DebuggerProps,
     FooterProps,
     HeaderProps,
     IconProps,
     MeterProps,
     PageProps,
-    StatProps
+    StatProps,
+    StateType,
+    LinearAlgebraState
 }
 
 export {
-    PageType
+    PageEnum,
 }

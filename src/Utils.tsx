@@ -1,4 +1,4 @@
-import { IconProps, PageType } from './Types';
+import { DebuggerProps, IconProps, PageEnum, StateType } from './Types';
 import { If, Then } from 'react-if';
 
 /*******************
@@ -28,7 +28,7 @@ const mapToIconComponents = (medias: any[]) => {
     return mapping;
 }
 
- const getPageDetails = async (type: PageType) => {
+ const getPageDetails = async (type: PageEnum) => {
     const url = 'http://localhost:8000/api/hello.js';
     const response = await fetch(url, {
         method: 'GET',    
@@ -101,11 +101,48 @@ const renderDocumentDetails = () => {
     )
 }
 
+const renderComponentDetails = (state: StateType) => {
+    const mapping: any[] = [];
+    for(const prop in state) {
+        mapping.push(
+            <li key={prop}>
+                {prop}: {state[prop].toString()}
+            </li>)
+    }    
+
+    return(
+        <ul>{mapping}</ul>
+    )
+}
+
+const getRandomRGB = () => {
+    const MAX = 256;
+    const getRandomNumber = (limit: number) => {
+        return Math.floor(Math.random() * limit);
+    }
+    const red = getRandomNumber(MAX);
+    const blue = getRandomNumber(MAX);
+    const green = getRandomNumber(MAX);
+    return `rgb(${red}, ${blue}, ${green})`;
+}
+
+const changeElementColors = (className: string) => {
+    // typecasting is needed: https://tinyurl.com/yzrp7tpt
+    const cells = Array.from(document.getElementsByClassName(className) as HTMLCollectionOf<HTMLElement>);
+    for(let i = 0; i < cells.length; i++) {
+        const rgb: string = getRandomRGB();
+        cells[i].style.backgroundColor = `${rgb}`;
+    }
+}
+
 export {
+    changeElementColors,
     getPageDetails,
     getProfessionalExperienceIcons,
+    getRandomRGB,
     getSocialMediaIcons,
     isNullOrUndefined,
     mapToIconComponents,
+    renderComponentDetails,
     renderDocumentDetails
 }

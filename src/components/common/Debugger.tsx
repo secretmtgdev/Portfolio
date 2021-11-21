@@ -1,10 +1,19 @@
-import { renderDocumentDetails } from '../../Utils';
+import { DebuggerProps } from '../../Types';
+import { isNullOrUndefined, renderComponentDetails, renderDocumentDetails } from '../../Utils';
+import { If, Then, Else } from 'react-if';
 
-const Debugger = () => {
+const Debugger = (props: DebuggerProps) => {
     return (
-        <div>
+        <div id='debugger'>
             <h2>Debugger</h2>
-            {renderDocumentDetails()}
+            <If condition={!isNullOrUndefined(props)}>
+                <Then>
+                    {renderComponentDetails(props.state!)}
+                </Then>
+                <Else>
+                    {renderDocumentDetails()}
+                </Else>
+            </If>
         </div>
     )
 }
