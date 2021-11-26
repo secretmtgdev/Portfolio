@@ -153,7 +153,7 @@ const LinearAlgebra = () => {
     }
 
     return (
-        <div className='page-container'>
+        <div data-testid='linear-algebra' className='page-container'>
             <div id='la-controls' className='controls'>
                 <div className='controls-row'>
                         <label aria-labelledby='rows'>Rows</label>
@@ -185,17 +185,20 @@ const LinearAlgebra = () => {
                         className={'icon-wrapper-button can-hover ' + (state.playing ? 'disabled' : '')}
                         disabled={state.playing}
                         onClick={() => updateState(false)}
+                        data-testid='step-backward'
                     >
                         <FontAwesomeIcon icon={faStepBackward} />
                     </button>
                     <button 
                         onClick={state.playing ? togglePlay : togglePause}
-                        className={'icon-wrapper-button can-hover ' + (state.playing  || state.paused ? 'active' : '')}>
+                        className={'icon-wrapper-button can-hover ' + (state.playing  || state.paused ? 'active' : '')}
+                        data-testid='play'>
                         <FontAwesomeIcon icon={state.playing ? faPause : faPlay} />
                     </button>
                     <button
                         className={'icon-wrapper-button can-hover'}
                         onClick={reset}
+                        data-testid='stop'
                     >
                         <FontAwesomeIcon icon={faStop} />
                     </button>
@@ -203,6 +206,7 @@ const LinearAlgebra = () => {
                         className={'icon-wrapper-button can-hover ' + (state.playing ? 'disabled' : '')}
                         disabled={state.playing}
                         onClick={() => updateState(true)}
+                        data-testid='step-forward'
                     >
                         <FontAwesomeIcon icon={faStepForward} />
                     </button>
