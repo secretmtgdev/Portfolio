@@ -1,6 +1,6 @@
 img {
-    height: 100%;
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .social-media-icon {
@@ -14,22 +14,9 @@ img {
     width: 100%;
 }
 
-.controls {
-    gap: 2em;
-    display: grid;
-}
-
 .controls-row {
     display: flex;
     justify-content: space-between;
-}
-
-.icon-wrapper-button {
-    width: 3em;
-    height: 2em;
-    border: 0.15em solid black;
-    border-radius: 10%;
-    text-align: center;
 }
 
 .active {
@@ -43,10 +30,6 @@ img {
 .can-hover:hover:not(.disabled) {
     cursor: pointer;
     border-color: darkgoldenrod;
-}
-
-.number-input {
-    width: 2em;
 }
 
 .page-container, .cell {
@@ -64,8 +47,13 @@ img {
  ** Matrix styling **
  ********************/
 
-.matrix-container {
+ .matrix-container {
     width: 100%;
+    
+    /** NOTE: 
+     * Setting vw or vh disables the users ability to zoom in.
+     * A workaround is to use height: calc(<magnitude>rem + <magnitude>vh)
+     */
     height: 50vh;
 }
 

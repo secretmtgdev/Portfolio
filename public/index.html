@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- 
+      Necessary so that mobile devices don't set their own viewport
+      and disable media queries. W/out this mobile users will see a
+      panned out page which will be too small to be useful and no
+      media queries will be applied. 
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
