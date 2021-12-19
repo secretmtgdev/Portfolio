@@ -1,4 +1,4 @@
-import { FooterProps } from '../../Types';
+import { FooterProps } from '../../types/Types';
 import { mapToIconComponents } from '../../Utils';
 
 const Footer = (props: FooterProps) => {

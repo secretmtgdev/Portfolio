@@ -1,4 +1,4 @@
-import { HeaderProps } from "../../Types";
+import { HeaderProps } from "../../types/Types";
 
 const Header = (props: HeaderProps) => {
     return (

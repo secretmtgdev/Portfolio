@@ -3,7 +3,7 @@ import { If, Then, Else } from 'react-if';
 import { useState, useEffect } from 'react';
 
 /**** CUSTOM TYPES ****/
-import { IconProps, PageProps } from "../../Types";
+import { IconProps, PageProps } from "../../types/Types";
 
 /**** CUSTOM COMPONENTS ****/
 import Navigation from "./Navigation";
@@ -20,6 +20,7 @@ const Page = (props: PageProps) => {
             const res = await getSocialMediaIcons();
             setSocials(res);
         };
+        console.error("Getting social media icons")
         getSocials();
     }, []); // add the array to avoid just running once
     

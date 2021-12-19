@@ -2,7 +2,7 @@ import { faPause, faPlay, faStepBackward, faStepForward, faStop } from '@fortawe
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import Debugger from '../../common/Debugger';
-import { LinearAlgebraState } from '../../../Types';
+import { LinearAlgebraState } from '../../../types/Types';
 import { changeElementColors } from '../../../Utils';
 
 const LinearAlgebra = () => {

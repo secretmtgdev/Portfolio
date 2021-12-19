@@ -10,4 +10,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  display: block;
+  white-space: pre-wrap;
+}
+
+.code-multiline {
+  display: block;
+  white-space: pre-wrap;
 }

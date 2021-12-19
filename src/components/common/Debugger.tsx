@@ -1,4 +1,4 @@
-import { DebuggerProps } from '../../Types';
+import { DebuggerProps } from '../../types/Types';
 import { isNullOrUndefined, renderComponentDetails, renderDocumentDetails } from '../../Utils';
 import { If, Then, Else } from 'react-if';
 
