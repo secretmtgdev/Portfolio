@@ -1,4 +1,4 @@
-import { StatProps, MeterProps } from '../../Types';
+import { StatProps, MeterProps } from '../../types/Types';
 
 const Stats = (props: StatProps) => {
     const mapping: any[] = [];

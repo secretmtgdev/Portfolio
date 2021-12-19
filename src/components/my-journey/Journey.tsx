@@ -1,6 +1,6 @@
 import { getProfessionalExperienceIcons, mapToIconComponents } from "../../Utils";
 import { useEffect, useState } from 'react';
-import { IconProps } from "../../Types";
+import { IconProps } from "../../types/Types";
 
 const Journey = () => {
     const baseState: IconProps[] = [];

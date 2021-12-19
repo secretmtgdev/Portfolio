@@ -1,8 +1,7 @@
-import React from 'react';
 import { DSPageProps } from "./CSProps";
 
 
-const DataStructurePageWrapper = ({children, name, runTimes, commonApplications}: DSPageProps) => {
+const DataStructurePageWrapper = ({children, name, implementation, runTimes, commonApplications}: DSPageProps) => {
     let mapping = [];
     for(const [key, value] of runTimes) {
         mapping.push(<li key={key+value}><strong>{key}</strong>: {value}</li>)
@@ -11,8 +10,12 @@ const DataStructurePageWrapper = ({children, name, runTimes, commonApplications}
         <header>
             <h2>{name}</h2>
         </header>
-        <section id="details">
-            {children}
+        <section id="details">      
+            {children}      
+        </section>
+        <section id="implementation">
+            <h3>Implementation</h3>
+            {implementation}
         </section>
         <section id="run-times">
             <h3>Run Times</h3>

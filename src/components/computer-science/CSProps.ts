@@ -1,8 +1,9 @@
 import React from "react";
 
 export interface DSPageProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     name: string;
-    runTimes: Map<string, string>;
+    implementation: React.ReactNode;
+    runTimes: Map<string, React.ReactNode>;
     commonApplications: string[];
 }

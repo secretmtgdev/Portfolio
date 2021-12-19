@@ -1,4 +1,4 @@
-import { PageEnum } from '../../Types';
+import { PageEnum } from '../../types/Types';
 import Page from '../common/Page';
 
 const Home = () => {

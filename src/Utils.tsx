@@ -1,4 +1,4 @@
-import { DebuggerProps, IconProps, PageEnum, StateType } from './Types';
+import { DebuggerProps, IconProps, PageEnum, StateType } from './types/Types';
 import { If, Then } from 'react-if';
 
 /*******************
