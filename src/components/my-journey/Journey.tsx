@@ -11,7 +11,7 @@ const Journey = () => {
             setExperienceIcons(res);
         };
         getExperienceIcons();
-    })
+    }, [])
     const mapping: any[] = mapToIconComponents(experienceIcons);
     return (
         <div>

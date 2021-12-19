@@ -16,9 +16,9 @@ const AppConstants = {
  *******************************/
 const mapToIconComponents = (medias: any[]) => {
     const mapping: any[] = [];
-    medias.forEach(media => {
+    medias.forEach((media, idx) => {
         mapping.push(
-            <div className="social-media-icon">
+            <div className="social-media-icon" key={idx}>
                 <a href={media.ref}>
                     <img alt={media.name} src={media.imgLink}/>
                 </a>

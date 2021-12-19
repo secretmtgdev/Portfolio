@@ -9,8 +9,7 @@ import HashMap from './components/computer-science/HashMap';
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
-      <HashMap />
+      <Home />
     </div>
   );
 }

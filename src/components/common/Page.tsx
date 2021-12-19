@@ -20,6 +20,7 @@ const Page = (props: PageProps) => {
             const res = await getSocialMediaIcons();
             setSocials(res);
         };
+        console.error("Getting social media icons")
         getSocials();
     }, []); // add the array to avoid just running once
     
